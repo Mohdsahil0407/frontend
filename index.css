@@ -4,8 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
+     flex-direction: column;
     color: white;
 }
 .login-container {
@@ -49,7 +48,7 @@ body {
     color: #aaa;
 }
 input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #333;
@@ -72,6 +71,7 @@ input {
     color: #0095f6;
     margin: 10px 0;
     text-decoration: none;
+    align-items: end;
 }
 .signup-link {
     margin-top: 15px;
@@ -88,6 +88,6 @@ input {
 }
 .footer-links a {
     color: #aaa;
-    margin: 0 5px;
+    margin: 20px 5px;
     text-decoration: none;
 }

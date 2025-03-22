@@ -34,3 +34,4 @@
             window.location.href = "error.html"; // Redirect to error page on failure
         });
     }
+

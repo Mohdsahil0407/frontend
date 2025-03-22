@@ -12,12 +12,14 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            height: 100vh; /* ✅ Fixes centering */
+            margin: 0;
+            padding: 0;
             color: white;
             text-align: center;
         }
         .error-container {
             background: #121212;
-            margin-top: 50px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
@@ -35,6 +37,9 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .back-btn:hover {
+            background-color: #0073d6;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +51,7 @@
 
     <script>
         function goBack() {
-            window.location.href = "index.html";
+            window.history.back(); // ✅ Fixes back button
         }
     </script>
 </body>

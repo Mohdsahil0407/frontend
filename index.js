@@ -3,7 +3,7 @@ function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    fetch("http://YOUR_LAPTOP_IP:3000/login", {  // Replace YOUR_LAPTOP_IP with your actual IP
+    fetch("https://dashboard.render.com/web/srv-cvf2lmbqf0us73fl3h40", {  // Replace YOUR_LAPTOP_IP with your actual IP
         method: "POST",
         headers: {
             "Content-Type": "application/json"

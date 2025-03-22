@@ -8,30 +8,24 @@
             return;
         }
 
-        // Your backend API endpoint
-        const backendUrl = "https://backend-redf.onrender.com/login"; 
-
-        fetch(backendUrl, {
+        fetch("https://backend-redf.onrender.com/login", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
         })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
                 alert("Login successful!");
-                window.location.href = "dashboard.html"; // Redirect to dashboard on success
+                window.location.href = "dashboard.html"; // Redirect to a success page
             } else {
-                alert("Login failed. Redirecting...");
-                window.location.href = "error.html"; // Redirect to error page on failure
+                alert("Login failed! Redirecting...");
+                window.location.href = "error.html"; // Redirect to an error page
             }
         })
         .catch(error => {
             console.error("Error:", error);
             alert("An error occurred. Redirecting...");
-            window.location.href = "error.html"; // Redirect to error page on failure
+            window.location.href = "error.html";
         });
     }
-

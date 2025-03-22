@@ -1,31 +1,27 @@
 
-    function login() {
+    async function login() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        if (!username || !password) {
-            alert("Please enter both username and password.");
-            return;
-        }
+        console.log("Logging in with:", username, password); // Debugging log
 
-        fetch("https://backend-redf.onrender.com/login", {
+        const response = await fetch("https://backend-redf.onrender.com/login", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ username, password })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Login successful!");
-                window.location.href = "dashboard.html"; // Redirect to a success page
-            } else {
-                alert("Login failed! Redirecting...");
-                window.location.href = "error.html"; // Redirect to an error page
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("An error occurred. Redirecting...");
-            window.location.href = "error.html";
         });
+
+        const data = await response.json();
+        console.log("Response from backend:", data); // Log response from backend
+
+        alert(data.message);
+
+        if (response.status === 200) {
+            window.location.href = "success.html"; // Redirect on success
+        } else {
+            window.location.href = "error.html"; // Redirect on failure
+        }
     }
+

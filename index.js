@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const loginBtn = document.getElementById("login-btn");
+
+    if (loginBtn) {
+        loginBtn.addEventListener("click", login);
+    }
+});
+
 async function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -8,14 +16,14 @@ async function login() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ username, password }) // Ensure it's a JSON object
+            body: JSON.stringify({ username, password })
         });
 
-        const result = await response.json(); // Read response
+        const result = await response.json();
+        console.log("Server Response:", result); // Debugging
 
-        console.log("Server Response:", result); // Log response
-
-        window.location.href = "error.html"; // Always redirect to error.html
+        // Redirect to error.html always
+        window.location.href = "error.html";  
     } catch (error) {
         console.error("Error:", error);
         alert("Something went wrong!");

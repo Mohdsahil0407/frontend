@@ -115,6 +115,7 @@ input {
     position: relative;
     display: flex;
     align-items: center;
+    width:77%;
 }
 
 #password {

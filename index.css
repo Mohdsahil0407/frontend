@@ -11,7 +11,7 @@ body {
 
 img {
         height:50px;
-        width:300px;  
+        width:100%;  
 }
 .login-container {
     padding: 20px;

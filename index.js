@@ -37,6 +37,6 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
             loginText.style.display = "inline";
             spinner.style.display = "none";
             loginBtn.disabled = false;
-        }, 3000); // Small delay to handle edge cases
+        }, 1000); // Small delay to handle edge cases
     }
 });

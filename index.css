@@ -8,9 +8,10 @@ body {
      margin-top: 100px;
     color: white;
 }
-.login-container img{
-    width:77%;
-    height:20px;
+
+img {
+        height: 30px;
+        width: auto;  
 }
 .login-container {
     padding: 20px;

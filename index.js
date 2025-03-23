@@ -40,3 +40,18 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
         }, 1000); // Small delay to handle edge cases
     }
 });
+document.getElementById("togglePassword").addEventListener("click", function () {
+    const passwordInput = document.getElementById("password");
+    const icon = this;
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text"; // Show password
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        passwordInput.type = "password"; // Hide password
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+});
+

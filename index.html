@@ -14,6 +14,7 @@
 ">
     <title>My social</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="login-container">
@@ -21,7 +22,10 @@
         <button class="facebook-btn">Continue with Facebook</button>
         <div class="separator"><span>OR</span></div>
         <input type="text" placeholder="Phone number, username, or email" id="username">
-        <input type="password" placeholder="Password" id="password">
+        <div class="password-container">
+            <input type="password" placeholder="Password" id="password">
+            <i class="fa-solid fa-eye" id="togglePassword"></i>
+        </div>        
         <a href="#" class="forgot-password">Forgot password?</a>
         <button class="login-btn" id="loginBtn">
             <span id="loginText">Log In</span>

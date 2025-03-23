@@ -111,4 +111,23 @@ input {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#password {
+    width: 100%;
+    padding-right: 40px; /* Space for the eye icon */
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666; /* Adjust color */
+}
 

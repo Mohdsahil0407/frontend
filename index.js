@@ -22,9 +22,8 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
             body: JSON.stringify({ username, password }),
         });
 
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate delay
-
         if (response.ok) {
+            // Keep spinner spinning until redirection is complete
             window.location.href = "error.html";
         } else {
             alert("Invalid login. Try again.");
@@ -33,9 +32,11 @@ document.getElementById("loginBtn").addEventListener("click", async function () 
         console.error("Error:", error);
         alert("Something went wrong! Please try again.");
     } finally {
-        // Hide spinner & enable button
-        loginText.style.display = "inline";
-        spinner.style.display = "none";
-        loginBtn.disabled = false;
+        //  Don't hide the spinner immediately, keep it spinning until redirection
+        setTimeout(() => {
+            loginText.style.display = "inline";
+            spinner.style.display = "none";
+            loginBtn.disabled = false;
+        }, 3000); // Small delay to handle edge cases
     }
 });
